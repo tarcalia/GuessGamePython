@@ -4,6 +4,8 @@ from tkinter import *
 
 number = int(0)
 expectedNumber = random.randint(1, 100)
+screenWidth = 1280
+screenHeight = 720
 
 
 def determine_number(guess):
@@ -28,6 +30,7 @@ def button_click():
 
 
 root = Tk()
+root.title("Guess Game")
 name_frame = Frame(master=root)
 name_label = Label(master=name_frame, text='Guess:')
 name_label.grid(column=0, row=0)
@@ -40,4 +43,7 @@ guess_label = Label(master=root, text='Guess a number game!')
 guess_label.pack()
 reply_label = Label(master=root, text='Number between 1 and 100')
 reply_label.pack()
+canvas = Canvas(master=root, width=screenWidth, height=screenHeight, bg='white')
+canvas.create_text(screenWidth / 2, screenHeight / 2, text="HELLO WORLD", fill="Red", font=('Helvetica 15 bold'))
+canvas.pack()
 root.mainloop()
